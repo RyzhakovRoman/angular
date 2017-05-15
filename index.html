@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Тесто</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="js/lib/angular.js" defer></script>
+
+    <script src="js/ngMainModule.js" defer></script>
+    <script src="js/controllers/script.js" defer></script>
+</head>
+<body ng-controller="phoneCtrl">
+
+    <div class="quest">
+        <h3>{{question.text}}</h3>
+        <p> {{question.author}} </p>
+        <p><i>{{question.date}}</i></p>
+    </div>
+
+    <p>Введите ответчика: <input type="text" ng-model="member"></p>
+    <h3>Ответы</h3>
+    <div class="answers">
+        <div ng-repeat="a in question.answers | filter:{author:member}" class="answer">
+            <div class="vote">
+                <a class="vote-up" ng-click="voteUp(a)"></a>
+                <span class="rate">{{a.rate}}</span>
+                <a class="vote-down" ng-click="voteDown(a)"></a>
+            </div>
+            <b>{{a.text}}</b>
+            <p>{{a.author}}</p>
+            <p><i>{{a.date}}</i></p>
+        </div>
+    </div>
+
+</body>
+</html>
