@@ -29,9 +29,15 @@ myApp.controller("phoneCtrl", function ($scope) {
     $scope.voteDown = function (answer){
         answer.rate--;
     };
-
 });
 
-myApp.controller("answerCtrl", function ($scope) {
-
-});
+// myApp.controller("answerCtrl", function ($scope) {
+//
+//         $scope.save = function (answer, answerForm){
+//             console.dir(answerForm);
+//             if(answerForm.$valid){
+//                 // действия по сохранению
+//                 alert(answer.author + ", ваш ответ сохранен");
+//             }
+//         };
+// });
