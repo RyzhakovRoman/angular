@@ -5,27 +5,35 @@
     <title>Тесто</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
     <script src="js/lib/angular.js" defer></script>
 
     <script src="js/ngMainModule.js" defer></script>
 
-    <script src="js/directives/myAnswerList.js" defer></script>
-    <script src="js/filters/filter.js" defer></script>
+    <!--<script src="js/directives/myAnswerList.js" defer></script>-->
+    <!--<script src="js/filters/filter.js" defer></script>-->
     <script src="js/controllers/script.js" defer></script>
 
 </head>
 <body ng-controller="phoneCtrl">
 
-    <div class="quest">
-        <h3>{{question.text}}</h3>
-        <p>{{question.author}} </p> <p><i>{{question.date}}</i></p>
-    </div>
-
-    <h3>Ответы</h3>
-
-    <div my-answer-list="question">
-
-    </div>
-
+    <form name="answerForm">
+        <fieldset>
+            <p>
+                <label for="answerText">Текст ответа</label>
+                <input id="answerText" ng-model="answer.text" required placeholder="Введите ответ">
+            </p>
+            <p>
+                <label for="answerAuthor">Автор ответа</label>
+                <input id="answerAuthor" ng-model="answer.author" required placeholder="Введите автора">
+            </p>
+        </fieldset>
+        <p>
+            <button type="submit" ng-click="save(answer, answerForm)">Сохранить</button>
+        </p>
+    </form>
+    <div>Ответ:</div>
+    <p ng-bind="response.text"></p>
+    <p ng-bind="response.author"></p>
 </body>
 </html>
