@@ -42,7 +42,7 @@
         <!--<button id="send">Отправить</button>-->
     <!--</form>-->
     <p id="pp"></p>
-    <form name="" action="/medicinskiy_polis/zajavka-na-meditsinskoye-strakhovanie/#wpcf7-f3172-p3174-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+    <form name="" action="php/forAjax.php" method="post" class="wpcf7-form" novalidate="novalidate">
         <div style="display: none;">
             <input type="hidden" name="_wpcf7" value="3172">
             <input type="hidden" name="_wpcf7_version" value="4.0.3">
@@ -120,7 +120,7 @@
                         }
 
                         if (xhr.status === 200) {
-
+                            document.forms[0].submit();
                         }
                     };
 

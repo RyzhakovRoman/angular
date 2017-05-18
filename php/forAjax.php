@@ -3,8 +3,8 @@
 $json = file_get_contents('php://input');
 $update = json_decode($json, true);
 
-//$str = isset($_POST['bid']);
-
-echo $json;
-//
-//echo $_POST;
+if (isset($json)) {
+    echo $json;
+} else {
+    echo 'форма отправленна';
+}
