@@ -6,34 +6,141 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-    <script src="js/lib/angular.js" defer></script>
+    <!--<script src="js/lib/angular.js" defer></script>-->
 
-    <script src="js/ngMainModule.js" defer></script>
+    <!--<script src="js/ngMainModule.js" defer></script>-->
 
     <!--<script src="js/directives/myAnswerList.js" defer></script>-->
     <!--<script src="js/filters/filter.js" defer></script>-->
-    <script src="js/controllers/script.js" defer></script>
+    <!--<script src="js/controllers/script.js" defer></script>-->
 
 </head>
 <body ng-controller="phoneCtrl">
 
-    <form name="answerForm">
-        <fieldset>
-            <p>
-                <label for="answerText">Текст ответа</label>
-                <input id="answerText" ng-model="answer.text" required placeholder="Введите ответ">
-            </p>
-            <p>
-                <label for="answerAuthor">Автор ответа</label>
-                <input id="answerAuthor" ng-model="answer.author" required placeholder="Введите автора">
-            </p>
-        </fieldset>
-        <p>
-            <button type="submit" ng-click="save(answer, answerForm)">Сохранить</button>
+    <!--<form name="answerForm">-->
+        <!--<fieldset>-->
+            <!--<p>-->
+                <!--<label for="answerText">Текст ответа</label>-->
+                <!--<input id="answerText" ng-model="answer.text" required placeholder="Введите ответ">-->
+            <!--</p>-->
+            <!--<p>-->
+                <!--<label for="answerAuthor">Автор ответа</label>-->
+                <!--<input id="answerAuthor" ng-model="answer.author" required placeholder="Введите автора">-->
+            <!--</p>-->
+        <!--</fieldset>-->
+        <!--<p>-->
+            <!--<button type="submit" ng-click="save(answer, answerForm)">Сохранить</button>-->
+        <!--</p>-->
+    <!--</form>-->
+    <!--<div>Ответ:</div>-->
+    <!--<p ng-bind="response.text"></p>-->
+    <!--<p ng-bind="response.author"></p>-->
+
+
+
+    <!--<form name="form1" action="php/forAjax.php" onsubmit="return false">-->
+        <!--<button id="send">Отправить</button>-->
+    <!--</form>-->
+    <p id="pp"></p>
+    <form name="" action="/medicinskiy_polis/zajavka-na-meditsinskoye-strakhovanie/#wpcf7-f3172-p3174-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+        <div style="display: none;">
+            <input type="hidden" name="_wpcf7" value="3172">
+            <input type="hidden" name="_wpcf7_version" value="4.0.3">
+            <input type="hidden" name="_wpcf7_locale" value="">
+            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f3172-p3174-o1">
+            <input type="hidden" name="_wpnonce" value="b727ec6607">
+        </div>
+        <p>Пожалуйста, заполните форму заявки (поля со <span style="color:red;">*</span> - обязательны для ввода или выбора данных)</p>
+        <p>Как к Вам обратиться<span style="color:red;"> *</span><br>
+            <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required imyazv" aria-required="true" aria-invalid="false"></span> </p>
+        <p>Укажите свою электронную почту<br>
+            <span class="wpcf7-form-control-wrap your-mail"><input type="email" name="your-mail" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email imyazv" aria-invalid="false"></span> </p>
+        <p>Укажите свой телефон<span style="color:red;"> *</span><br>
+            <span class="wpcf7-form-control-wrap tel-445"><input type="tel" name="tel-445" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel telzvon1" id="phone" aria-required="true" aria-invalid="false" placeholder="+7 (___) ___-__-__"></span> </p>
+        <p><br>Выберите программу<br>
+            <span class="wpcf7-form-control-wrap program"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first"><label><input type="checkbox" name="program[]" value="Поликлиника">&nbsp;<span class="wpcf7-list-item-label">Поликлиника</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="program[]" value="Стоматология">&nbsp;<span class="wpcf7-list-item-label">Стоматология</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="program[]" value="Помощь на дому">&nbsp;<span class="wpcf7-list-item-label">Помощь на дому</span></label></span><span class="wpcf7-list-item last"><label><input type="checkbox" name="program[]" value="Скорая (неотложная) помощь">&nbsp;<span class="wpcf7-list-item-label">Скорая (неотложная) помощь</span></label></span></span></span>
         </p>
+        <p><br>Желаемый ценовой диапазон программы, рублей<br>
+            <span class="wpcf7-form-control-wrap prices"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first"><label><input type="checkbox" name="prices[]" value="5 000 - 20 000">&nbsp;<span class="wpcf7-list-item-label">5 000 - 20 000</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="prices[]" value="20 000 - 50 000">&nbsp;<span class="wpcf7-list-item-label">20 000 - 50 000</span></label></span><span class="wpcf7-list-item last"><label><input type="checkbox" name="prices[]" value="50 000 - 150 000">&nbsp;<span class="wpcf7-list-item-label">50 000 - 150 000</span></label></span></span></span>
+        </p>
+        <p><br>Кто будет застрахован<br>
+            <span class="wpcf7-form-control-wrap gender"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first"><label><input type="checkbox" name="gender[]" value="Женщина">&nbsp;<span class="wpcf7-list-item-label">Женщина</span></label></span><span class="wpcf7-list-item"><label><input type="checkbox" name="gender[]" value="Мужчина">&nbsp;<span class="wpcf7-list-item-label">Мужчина</span></label></span><span class="wpcf7-list-item last"><label><input type="checkbox" name="gender[]" value="Ребёнок">&nbsp;<span class="wpcf7-list-item-label">Ребёнок</span></label></span></span></span>
+        </p>
+        <p><br>Дополнительная информация<br>
+            <span class="wpcf7-form-control-wrap your-info"><textarea name="your-info" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea zv" aria-invalid="false"></textarea></span>  </p>
+        <p><span class="wpcf7-form-control-wrap checkbox-195"><span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span class="wpcf7-list-item first last"><input type="checkbox" name="checkbox-195[]" value="">&nbsp;<span class="wpcf7-list-item-label"></span></span></span></span> С <a href="http://www.euro-ins.ru/wp-content/uploads/pictures/Политика-ООО-РСО-ЕВРОИНС-в-отношении-обработки-и-защиты-персональных-данных.pdf" onclick="window.open('http://www.euro-ins.ru/wp-content/uploads/pictures/Политика-ООО-РСО-ЕВРОИНС-в-отношении-обработки-и-защиты-персональных-данных.pdf', 'newWin', 'toolbar=0, location=0, directories=0, status=0, menubar=0, scrollbars=1, resizable=1, width=800, height=800'); return false;">политикой обработки и защиты персональных данных</a> ознакомлен. В соответствии с законом «О персональных данных» от 27.07.2006. N 152-ФЗ даю свое согласие на их обработку, включая все операции с персональными данными, предусмотренные п.З ст.З указанного закона.<span style="color:red;"> *</span></p>
+        <p>
+            Введите код, который Вы видите на изображении (учитывая регистр ввода)<span style="color:red;"> *</span><br>
+            <input type="hidden" name="_wpcf7_captcha_challenge_captcha-739" value="256531600"><img class="wpcf7-form-control wpcf7-captchac wpcf7-captcha-captcha-739" width="72" height="24" alt="captcha" src="https://www.euro-ins.ru/wp-content/uploads/wpcf7_captcha/256531600.png"> <span class="wpcf7-form-control-wrap captcha-739"><input type="text" name="captcha-739" value="" size="40" class="wpcf7-form-control wpcf7-captchar capcha" aria-invalid="false"></span></p>
+        <p><input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit myButton"><img class="ajax-loader" src="https://www.euro-ins.ru/wp-content/plugins/contact-form-7/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;"></p>
+        <div class="wpcf7-response-output wpcf7-display-none"></div>
     </form>
-    <div>Ответ:</div>
-    <p ng-bind="response.text"></p>
-    <p ng-bind="response.author"></p>
+
+    <button id="btn">проверить введенные данные</button>
+
+    <script>
+        window.onload = function () {
+            var btn, form, bid = {};
+
+            btn  = document.getElementById('btn');
+            form = {
+                // d - DOM
+                dFormElems : document.getElementsByClassName('wpcf7-form')[0].elements,
+
+                // Функция получения простых полей ввода (не чек боксы, там множественный выбор)
+                getInputValue : function (inp) {
+                    return this.dFormElems[inp].value;
+                },
+
+                getCheckedByType : function (type) {
+                    var len, inp, arr, list;
+                    list = this.dFormElems[type + '[]'];
+                    len  = list.length;
+                    arr  = [];
+                    for (var i = 0; i < len; i++) {
+                        inp = list[i];
+                        if (inp.checked === true) {
+                            arr.push(inp.value);
+                        }
+                    }
+                    return arr.join(', ');
+                },
+
+                sendBid : function (bid) {
+                    var xhr;
+
+                    xhr = new XMLHttpRequest();
+
+                    xhr.open('POST', 'php/forAjax.php');
+                    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                    
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState !== 4) {
+                            return;
+                        }
+
+                        if (xhr.status === 200) {
+
+                        }
+                    };
+
+                    bid = JSON.stringify(bid);
+
+                    xhr.send(bid);
+                }
+            };
+
+            btn.addEventListener('click', function () {
+                bid.name         = form.getInputValue('your-name');
+                bid.typeProgram  = form.getCheckedByType('program');
+                bid.typeInsurant = form.getCheckedByType('gender');
+                bid.priceLevel   = form.getCheckedByType('prices');
+                bid.phone        = form.getInputValue('phone');
+                bid.email        = form.getInputValue('your-mail');
+                bid.info         = form.getInputValue('your-info');
+                form.sendBid(bid);
+            });
+        };
+    </script>
 </body>
 </html>

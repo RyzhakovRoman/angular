@@ -5,10 +5,10 @@ function QuestionController($scope, $http) {
     $scope.save = function (answer, answerForm){
         if(answerForm.$valid){
 
-            $http.post("question.json", answer).then(function success (response) {
-                $scope.response = answer;//response.data;
-                console.log(response);
-            });
+            // $http.post("php/forAjax.php", answer).then(function success (response) {
+            //     $scope.response = answer;//response.data;
+            //     console.log(response);
+            // });
         }
     };
 
